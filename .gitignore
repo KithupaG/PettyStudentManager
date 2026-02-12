@@ -1,0 +1,156 @@
+# ==========================================
+# FRONTEND (React Native)
+# ==========================================
+
+# dependencies
+frontend/node_modules/
+frontend/.pnp
+frontend/.pnp.js
+
+# Expo
+frontend/.expo/
+frontend/.expo-shared/
+frontend/dist/
+frontend/web-build/
+frontend/expo-env.d.ts
+
+# Native
+frontend/.kotlin/
+frontend/*.orig.*
+frontend/*.jks
+frontend/*.p8
+frontend/*.p12
+frontend/*.key
+frontend/*.mobileprovision
+
+# Metro
+frontend/.metro-health-check*
+
+# debug
+frontend/npm-debug.*
+frontend/yarn-debug.*
+frontend/yarn-error.*
+
+# macOS
+frontend/.DS_Store
+frontend/*.pem
+
+# local env files
+frontend/.env
+frontend/.env*.local
+
+# typescript
+frontend/*.tsbuildinfo
+
+# generated native folders (if using bare workflow)
+frontend/ios/
+frontend/android/
+
+# misc
+frontend/app-example/
+
+
+# ==========================================
+# BACKEND (Java + Maven + Hibernate)
+# ==========================================
+
+# Compiled class files
+backend/target/
+backend/out/
+backend/build/
+backend/*.class
+
+# Maven
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+
+# Package Files
+backend/*.jar
+backend/*.war
+backend/*.nar
+backend/*.ear
+backend/*.zip
+backend/*.tar.gz
+backend/*.rar
+
+# IntelliJ IDEA
+backend/.idea/
+backend/*.iml
+backend/*.iws
+backend/*.ipr
+
+# Eclipse
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/bin/
+
+# NetBeans
+backend/nbproject/private/
+backend/nbbuild/
+backend/dist/
+backend/nbdist/
+
+# VS Code
+backend/.vscode/
+
+# Log files
+backend/*.log
+backend/logs/
+
+# Database
+backend/*.db
+backend/*.sqlite
+
+# Hibernate specific
+backend/hibernate.cfg.xml.local
+
+# OS Files
+backend/.DS_Store
+backend/Thumbs.db
+
+# Temporary files
+backend/*.tmp
+backend/*.temp
+backend/*.swp
+backend/*~
+
+
+# ==========================================
+# DATABASE
+# ==========================================
+
+# MySQL dumps (optional - exclude if you don't want to commit DB dumps)
+*.sql
+*.dump
+
+
+# ==========================================
+# GLOBAL
+# ==========================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Editor backup files
+*.bak
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+```
