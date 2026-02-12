@@ -42,10 +42,6 @@ frontend/.env*.local
 # typescript
 frontend/*.tsbuildinfo
 
-# generated native folders (if using bare workflow)
-frontend/ios/
-frontend/android/
-
 # misc
 frontend/app-example/
 
