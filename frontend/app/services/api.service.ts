@@ -1,24 +1,29 @@
-import { API_BASE_URL } from '../config/api.config';
+const WS_URL = "ws://192.168.1.8:8080";
+let socket: WebSocket | null = null;
 
-export const fetchStudents = async () => {
-    const res = await fetch(API_BASE_URL);
-    return res.json();
+export const initWebSocket = (onMessageReceived: (data: any) => void) => {
+  if (!socket || socket.readyState !== WebSocket.OPEN) {
+    socket = new WebSocket(WS_URL);
+
+    socket.onmessage = (e) => {
+      const data = JSON.parse(e.data);
+      onMessageReceived(data);
+    };
+
+    socket.onerror = (e) => console.error("WS Error", e);
+    socket.onclose = () => console.log("WS Disconnected");
+  } else {
+    socket.onmessage = (e) => {
+      const data = JSON.parse(e.data);
+      onMessageReceived(data);
+    };
+  }
 };
 
-export const addStudent = async (student: any) => {
-    await fetch(API_BASE_URL, {
-        method: 'POST',
-        body: JSON.stringify(student)
-    });
-};
-
-export const updateStudent = async (student: any) => {
-    await fetch(API_BASE_URL, {
-        method: 'PUT',
-        body: JSON.stringify(student)
-    });
-};
-
-export const deleteStudent = async (id: number) => {
-    await fetch(`${API_BASE_URL}?id=${id}`, { method: 'DELETE' });
+export const sendAction = (type: "ADD" | "UPDATE" | "DELETE", student: any) => {
+  if (socket && socket.readyState === WebSocket.OPEN) {
+    socket.send(JSON.stringify({ type, student }));
+  } else {
+    console.error("Cannot send action, WebSocket is not open");
+  }
 };

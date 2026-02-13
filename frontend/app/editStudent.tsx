@@ -1,7 +1,7 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import React, { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
-import { updateStudent } from "./services/api.service";
+import { sendAction } from "./services/api.service";
 import { styles } from "./styles/universal";
 
 export default function EditStudent() {
@@ -14,8 +14,8 @@ export default function EditStudent() {
     course: params.course as string,
   });
 
-  const handleUpdate = async () => {
-    await updateStudent(form);
+  const handleUpdate = () => {
+    sendAction("UPDATE", form);
     router.back();
   };
 

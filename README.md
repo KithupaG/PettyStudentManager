@@ -198,22 +198,18 @@ petty-student-manager/
 │
 ├── frontend/
 │   ├── app/
-│   │   ├── screens/
-│   │   │   ├── HomeScreen.tsx
-│   │   │   ├── StudentListScreen.tsx
-│   │   │   └── AddStudentScreen.tsx
-|   |   |   └── EditStudentScreen.tsx
-│   │   ├── components/
-│   │   │   ├── StudentList.tsx
-│   │   │   └── StudentForm.tsx
+│   │   ├── index.tsx
+│   │   ├── _layout.tsx
+│   │   ├── AddStudentScreen.tsx
+│   │   │── EditStudentScreen.tsx
+|   |   |── dashboard.tsx
 │   │   ├── services/
 │   │   │   ├── api.service.ts
 │   │   │   └── storage.service.ts
 │   │   ├── config/
 │   │   │   └── api.config.ts
 │   │   └── styles/
-│   │       └── globalStyles.ts
-│   ├── App.json
+│   │       └── universal.ts
 │   ├── package.json
 │   └── tsconfig.json
 │

@@ -1,7 +1,7 @@
-import { useFocusEffect, useRouter } from "expo-router";
-import React, { useState } from "react";
+import { useRouter } from "expo-router";
+import React, { useEffect, useState } from "react";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
-import { deleteStudent, fetchStudents } from "./services/api.service";
+import { initWebSocket, sendAction } from "./services/api.service";
 
 import { styles } from "./styles/universal";
 
@@ -9,17 +9,14 @@ export default function Dashboard() {
   const [students, setStudents] = useState([]);
   const router = useRouter();
 
-  useFocusEffect(
-    React.useCallback(() => {
-      loadData();
-    }, []),
-  );
+  useEffect(() => {
+    initWebSocket((newList) => {
+      setStudents(newList);
+    });
+  }, []);
 
-  const loadData = async () => setStudents(await fetchStudents());
-
-  const handleDelete = async (id: number) => {
-    await deleteStudent(id);
-    loadData();
+  const handleDelete = (id: number) => {
+    sendAction("DELETE", { id });
   };
 
   return (

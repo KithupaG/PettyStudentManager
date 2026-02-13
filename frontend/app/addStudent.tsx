@@ -1,18 +1,18 @@
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
-import { addStudent } from "./services/api.service";
+import { sendAction } from "./services/api.service";
 import { styles } from "./styles/universal";
 
 export default function AddStudent() {
   const router = useRouter();
   const [form, setForm] = useState({ name: "", email: "", course: "" });
 
-  const handleSave = async () => {
-    await addStudent(form);
+  const handleSave = () => {
+    sendAction("ADD", form);
     router.back();
   };
-
+  
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Add New Student</Text>
