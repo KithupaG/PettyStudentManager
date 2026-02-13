@@ -5,14 +5,14 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/student_manager</property>
-        <property name="hibernate.connection.username">YOUR_USERNAME_HERE</property>
-        <property name="hibernate.connection.password">YOUR_PASSWORD_HERE</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/petty_student_manager</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">BuduAmmoRoot@123!</property>
         
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         
-        <mapping class="com.studentmanager.model.Student"/>
+        <mapping class="jiat.ws.model.Student"/>
     </session-factory>
 </hibernate-configuration>

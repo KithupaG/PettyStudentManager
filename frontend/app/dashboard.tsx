@@ -31,7 +31,7 @@ export default function Dashboard() {
         renderItem={({ item }) => (
           <View style={styles.card}>
             <Text style={styles.cardTitle}>{item.name}</Text>
-            <Text style={styles.cardSubtitle}>
+            <Text style={styles.cardTitle}>
               {item.course} | {item.email}
             </Text>
             <View style={styles.row}>
